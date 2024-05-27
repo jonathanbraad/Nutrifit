@@ -34,14 +34,15 @@ export const Register = () => {
           password
         )
 
-        if(response.user) {
+        if (response.user) {
           await createProfile(response)
           nav.replace("Main");
         }
 
-      } catch (e) {
-        Alert.alert("something went wrong, try again")
-      }
+      } catch (error) {
+        console.error("Registration error:", error);
+        alert("Registration failed");
+    }
     }
   };
 
